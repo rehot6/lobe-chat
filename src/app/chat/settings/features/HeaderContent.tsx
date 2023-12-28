@@ -43,7 +43,7 @@ export const HeaderContent = memo<{ mobile?: boolean }>(() => {
 
   return (
     <>
-      <SubmitAgentButton />
+      {/* <SubmitAgentButton /> */}
       <Dropdown arrow={false} menu={{ items }} trigger={['click']}>
         <ActionIcon
           icon={HardDriveDownload}

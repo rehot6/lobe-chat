@@ -35,7 +35,7 @@ export interface LobeAgentConfig {
   inputTemplate?: string;
   /**
    * 角色所使用的语言模型
-   * @default gpt-3.5-turbo
+   * @default gpt-3.5-turbo-1106
    */
   model: LanguageModel | string;
   /**

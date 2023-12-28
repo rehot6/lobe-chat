@@ -22,7 +22,7 @@ const Header = memo(() => {
           <Logo className={styles.logo} extra={'Discover'} size={36} type={'text'} />
         </Link>
       }
-      right={<ShareAgentButton />}
+      // right={<ShareAgentButton />}
     />
   );
 });

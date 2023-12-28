@@ -21,7 +21,7 @@ const ModelSwitch = memo(() => {
   const modelList = useGlobalStore(settingsSelectors.modelList, isEqual);
 
   return (
-    <Dropdown
+    <Dropdown disabled
       menu={{
         activeKey: model,
         items: modelList.map(({ name, displayName }) => ({ key: name, label: displayName })),

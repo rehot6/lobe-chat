@@ -116,7 +116,7 @@ const AgentConfig = memo(() => {
     children: [
       {
         children: (
-          <Select
+          <Select disabled
             options={modelList.map(({ name, displayName }) => ({
               label: displayName,
               value: name,
