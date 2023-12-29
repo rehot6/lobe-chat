@@ -3,7 +3,7 @@ import { gt } from 'semver';
 import useSWR, { SWRResponse } from 'swr';
 import type { StateCreator } from 'zustand/vanilla';
 
-import { CURRENT_VERSION } from '@/const/version';
+// import { CURRENT_VERSION } from '@/const/version';
 import { globalService } from '@/services/global';
 import type { GlobalStore } from '@/store/global';
 import type { GlobalServerConfig } from '@/types/settings';
@@ -76,7 +76,7 @@ export const createCommonSlice: StateCreator<
   useCheckLatestVersion: () =>
     useSWR('checkLatestVersion', globalService.getLatestVersion, {
       onSuccess: (data: string) => {
-        if (gt(data, CURRENT_VERSION))
+        if (gt(data, '1.001.1'))
           set({ hasNewVersion: true, latestVersion: data }, false, n('checkLatestVersion'));
       },
     }),

@@ -1,11 +1,11 @@
 import { LobeBuiltinTool } from '@/types/tool';
 
-import { DalleManifest } from './dalle';
+// import { DalleManifest } from './dalle';
 
 export const builtinTools: LobeBuiltinTool[] = [
-  {
-    identifier: 'dalle3',
-    manifest: DalleManifest,
-    type: 'builtin',
-  },
+  // {
+  //   identifier: 'dalle3',
+  //   manifest: DalleManifest,
+  //   type: 'builtin',
+  // },
 ];
