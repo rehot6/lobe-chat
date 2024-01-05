@@ -19,7 +19,7 @@ export enum LanguageModel {
    * CUSTOM
    */
   M1_CHATGLM3 = 'chatglm-3-6b',
-  M2_RAG_GBF = 'chatglm-3-rag-gbf',
+  M2_RAG_GBF = 'chatgpt-rag-gbf',
 }
 
 // 语言模型的设置参数

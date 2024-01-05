@@ -10,21 +10,28 @@ interface CreateChatCompletionOptions {
   openai: OpenAI;
   payload: OpenAIChatStreamPayload;
 }
+interface HttpHeaders {
+  [key: string]: string;
+}
 
 export const createChatCompletion = async ({ payload, openai }: CreateChatCompletionOptions) => {
   // ============  1. preprocess messages   ============ //
-  const { messages, ...params } = payload;
+  const { messages, model, ...params } = payload;
 
   // ============  2. send api   ============ //
 
   try {
+    let headers: HttpHeaders = { Accept: '*/*' };
+    headers['X-Custom-Model'] = model;
+
     const response = await openai.chat.completions.create(
       {
         messages,
+        model,
         ...params,
         stream: true,
       } as unknown as OpenAI.ChatCompletionCreateParamsStreaming,
-      { headers: { Accept: '*/*' } },
+      { headers },
     );
     const stream = OpenAIStream(response);
     return new StreamingTextResponse(stream);
