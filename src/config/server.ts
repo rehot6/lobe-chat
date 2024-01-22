@@ -20,6 +20,8 @@ declare global {
 
       PLUGINS_INDEX_URL?: string;
       PLUGIN_SETTINGS?: string;
+
+      PROHIBITED_WORDS?: string;
     }
   }
 }
@@ -66,5 +68,7 @@ export const getServerConfig = () => {
       : 'https://chat-plugins.lobehub.com',
 
     PLUGIN_SETTINGS: process.env.PLUGIN_SETTINGS,
+
+    PROHIBITED_WORDS: !!process.env.PROHIBITED_WORDS ? process.env.PROHIBITED_WORDS : '大金',
   };
 };
